@@ -1,0 +1,21 @@
+main#invoices{
+     table {
+         width:100%;
+    td{
+     padding: 1rem;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 13px;
+    border-top: 1px rgba(0, 0, 0, 0.12) solid;
+    }
+    tr:not(:first-child):hover{
+        background-color: #eee;
+    }
+    th{
+    color: rgba(0,0,0,.54);
+     padding: 1rem;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+     border-top: 1px rgba(0, 0, 0, 0.12) solid;
+    }}
+}

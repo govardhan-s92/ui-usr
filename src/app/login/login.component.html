@@ -1,0 +1,40 @@
+<main id="login">
+    <section class="row align-items-center">
+        <div class="col-7 col-xs-12 no-gutter">
+            <div class="jumbotron mb-0">
+                <h1><a href="#" title="iHub_logo" tabindex="-1"><img src="../../assets/images/iHub-logo.png" alt=""></a></h1>
+                <p class="vspacer"></p>
+                <h2 class="display-3">Welcome</h2>
+                <p class="lead">Register for an Cloud Central Integration account here.</p>
+                <hr class="my-4">
+                <p>Register for an Cloud Central Integration here and get access to 120 + cloud integrations and Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nihil atque repudiandae commodi laudantium corporis culpa similique odio est.</p>
+                <p class="lead">
+                    <button md-raised-button (click)="register()">Register here</button>
+                </p>
+            </div>
+        </div>
+        <div class="col-5 col-xs-12 no-gutter">
+            <div class="jumbotron mb-0" color="primary">
+                <h2 class="font-weight-normal">Or Login to your account</h2>
+                <p class="vspacer"></p>
+                <p class="vspacer"></p>
+                <form (ngSubmit)="loginForm.form.valid && login()" #loginForm="ngForm">
+                    <p>
+                        <md-input-container class="form-full-width">
+                            <input mdInput placeholder="Username or Email Address" name="username" required [(ngModel)]="model.username">
+                        </md-input-container>
+                    </p>
+                    <p>
+                        <md-input-container class="form-full-width">
+                            <input mdInput type="password" placeholder="Password" name="password" required  [(ngModel)]="model.password">
+                        </md-input-container>
+                    </p>
+                    <p>
+                        <button md-raised-button type="submit" color="primary">LOGIN</button>
+                    </p>
+                </form>
+                <p><a routerLink="#">Forgot Password ?</a></p>
+            </div>
+        </div>
+    </section>
+</main>

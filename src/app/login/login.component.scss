@@ -1,0 +1,35 @@
+main {
+    position: absolute; 
+    bottom: 0;
+    top: 0;
+    background-color: #00bcd4;
+    color: #fff !important;
+    overflow: hidden;
+    h1 a img {
+        max-width: 150px;
+        height: auto;
+    }
+    .jumbotron {
+    background-color: #00bcd4;
+        height: 100%;
+        border-radius: 0;
+        hr {
+            border-top: 1px solid #fff;
+        }
+        button {
+            color: #00bcd4;
+        }
+    }
+    .jumbotron[color="primary"] {
+        background-color: #fff;
+        color:#bbb;
+        
+        md-input-container{
+        width:100%;
+        }
+        button{
+        color:#fff;
+         background-color: #00bcd4;
+        }
+    }
+}

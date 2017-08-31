@@ -1,0 +1,75 @@
+<main id="invoices">
+  <md-card>
+    <md-card-content>
+      <section class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <md-card>
+            <md-card-header><b>Integrations per month</b></md-card-header>
+            <md-card-content>
+              <!--<div id="bar_chart" [chartData]="chart1_ChartData" [chartOptions]="chart1_ChartOptions" chartType="BarChart" GoogleChart></div>-->
+            </md-card-content>
+          </md-card>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <md-card>
+            <md-card-header><b>Billing per month</b></md-card-header>
+            <md-card-content>
+              <!--<div id="bar_chart" [chartData]="chart2_ChartData" [chartOptions]="chart2_ChartOptions" chartType="BarChart" GoogleChart></div>-->
+            </md-card-content>
+          </md-card>
+        </div>
+      </section>
+
+      <hr>
+      <md-card>
+        <md-card-content>
+          <section class="row">
+            <md-select placeholder="Generate Bill Every" class="d-inline float-right" [(ngModel)]="billingScheduleOption">
+              <md-option *ngFor="let bill of billingSchedule" [value]="bill.value">
+                {{ bill.viewValue }}
+              </md-option>
+            </md-select>&emsp; &emsp;
+            <md-input-container>
+              <input mdInput [mdDatepicker]="picker" placeholder="From date">
+              <button mdSuffix [mdDatepickerToggle]="picker"></button>
+            </md-input-container>
+            <md-datepicker #picker></md-datepicker>&emsp;
+            <md-input-container>
+              <input mdInput [mdDatepicker]="picker1" placeholder="To date">
+              <button mdSuffix [mdDatepickerToggle]="picker1"></button>
+            </md-input-container>
+            <md-datepicker #picker1></md-datepicker>&emsp; &emsp;
+            <md-input-container class="search w-50" floatPlaceholder="never">
+              <i class="material-icons" mdSuffix>search</i>
+              <input mdInput type="search" placeholder="Search" [(ngModel)]="query">
+            </md-input-container>
+            <p>&nbsp;</p>
+            <div class="table-responsive">
+              <table class="styleTable">
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Generate on</th>
+                  <th>Download</th>
+                </tr>
+                <tr *ngFor="let invoice of invoices|search:query;let i = index">
+                  <td>{{i+1}}</td>
+                  <td><a [routerLink]="['/invoice', invoice.id ]">{{invoice.invoiceName}}</a></td>
+                  <td>{{invoice.description}}</td>
+                  <td>{{invoice.lastRun}}</td>
+                  <td align="center"><a md-mini-fab color="primary" href="../../assets/pdf/Invoice_Template.pdf" download><i class="material-icons">file_download</i></a></td>
+                </tr>
+                <tr>
+                  <td align="right" valign="top" colspan="6"><span>Page:</span> 1 &emsp; Rows per page: 10 &emsp; 1 - 10 of 200 &emsp;
+                    <span class="material-icons" style="vertical-align: bottom;">keyboard_arrow_left</span> &emsp;
+                    <span class="material-icons" style="vertical-align: bottom;">keyboard_arrow_right</span></td>
+                </tr>
+              </table>
+            </div>
+          </section>
+        </md-card-content>
+      </md-card>
+    </md-card-content>
+  </md-card>
+</main>

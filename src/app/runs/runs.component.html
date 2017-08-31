@@ -1,0 +1,39 @@
+<main id="run">
+  <md-card>
+    <div class="d-flex justify-content-center">
+      <md-input-container class="search w-25" floatPlaceholder="never">
+        <i class="material-icons" mdSuffix>search</i>
+        <input mdInput type="search" placeholder="Search" [(ngModel)]="query">
+      </md-input-container>
+    </div>
+    <section class="row">
+      <div class="table-responsive">
+        <table class="styleTable">
+          <tr>
+            <th>#</th>
+            <th>Run Id</th>
+            <th>Integration Name</th>
+            <th>Start Date</th>
+            <th>Duration</th>
+            <th>Message</th>
+            <th>Status</th>
+          </tr>
+          <tr *ngFor="let run of runs | search:query;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{run.runId}}</td>
+            <td>{{run.integrationName}}</td>
+            <td>{{run.startTimeStr}}</td>
+            <td>{{run.timeTaken}}</td>
+            <td>{{run.messageText}}</td>
+            <td>{{run.status}}</td>
+          </tr>
+          <tr>
+            <td align="right" valign="top" colspan="7"><span>Page:</span> 1 &emsp; Rows per page: 10 &emsp; 1 - 10 of 200 &emsp;
+              <span class="material-icons" style="vertical-align: bottom;">keyboard_arrow_left</span> &emsp;
+              <span class="material-icons" style="vertical-align: bottom;">keyboard_arrow_right</span></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </md-card>
+</main>

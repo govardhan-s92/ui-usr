@@ -1,0 +1,22 @@
+<main id="profile">
+  <md-card>
+    <md-grid-list cols="4">
+  <md-grid-tile colspan="1"><div>
+  <img src="https://www.wertisan.com/skin/frontend/wertisan/default/images/custom/dummy_user.png" alt="user profile image"></div>
+  </md-grid-tile> <md-grid-tile colspan="3">
+   <form class="profile-form">
+        <md-input-container class="w-100"><input mdInput placeholder="First Name" name="firstName" disabled [(ngModel)]="profile.firstName"></md-input-container>
+        <md-input-container class="w-100"><input mdInput placeholder="Last Name" name="lastName" disabled [(ngModel)]="profile.lastName"></md-input-container>
+        <md-input-container class="w-100"><input mdInput placeholder="Email or User Name" name="mail" disabled [(ngModel)]="profile.mail"></md-input-container>
+        <md-input-container class="w-100"><input mdInput placeholder="Profile Image URL" name="image" disabled [(ngModel)]="profile.image"></md-input-container>
+        <button md-raised-button color="primary">SAVE</button>
+        <button md-raised-button color="warn">CHANGE PASSWORD</button>
+      </form>
+  </md-grid-tile>
+</md-grid-list>
+    <section class="row">
+     
+    </section>
+
+  </md-card>
+</main>

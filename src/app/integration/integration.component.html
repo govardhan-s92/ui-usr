@@ -1,0 +1,85 @@
+<!--<app-pagination [offset]="offset" [limit]="limit" [size]="count" (pageChange)="onPageChange($event)"></app-pagination>-->
+
+<main id="integration">
+  <div class="d-flex justify-content-center">
+    <md-input-container class="search w-25" floatPlaceholder="never">
+      <i class="material-icons" mdSuffix>search</i>
+      <input mdInput type="search" placeholder="Search" [(ngModel)]="query">
+    </md-input-container>
+  </div>
+  <md-card>
+    <md-card-content>
+      <div class="row integration_card">
+        <div *ngFor="let integration of integrations | search:query" class="col-lg-4 col-md-4 col-sm-6  col-xs-12">
+          <md-card>
+            <md-card-header>
+              <div md-card-avatar mdTooltip="{{integration.status=='Active'?'In Active':'Active'}}"><button md-mini-fab class="int_action"><i class="material-icons">{{integration.status=='Active'?'arrow_downward':'arrow_upward'}}</i></button></div>
+              <md-card-title><a [routerLink]="['/integration',integration.integrationId]"><b>{{integration.integrationName}}</b></a></md-card-title>
+              <md-card-subtitle>{{integration.module}}: {{integration.functionalEntity}}</md-card-subtitle>
+            </md-card-header>
+            <md-card-content>
+              <p>
+                {{integration.description}}
+              </p>
+            </md-card-content>
+            <md-card-actions>
+              <button md-icon-button [mdMenuTriggerFor]="integrationMenu"><i class="material-icons">more_vert</i></button>              &nbsp;
+              <button md-icon-button disabled *ngFor="let i of icons"><i class="material-icons" [ngStyle]="{'color': i.color}" mdTooltip="{{i.status}}">fiber_manual_record</i></button>
+            </md-card-actions>
+          </md-card>
+        </div>
+      </div>
+      <p class="text-right"><span>Page:</span> 1 &emsp; Rows per page: 10 &emsp; 1 - 10 of 200 &emsp;
+        <span class="material-icons" style="vertical-align: bottom;">keyboard_arrow_left</span> &emsp;
+        <span class="material-icons" style="vertical-align: bottom;">keyboard_arrow_right</span></p>
+      <!--<div class="table-responsive">
+        <table class="styleTable">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Last 5 Runs</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let integration of integrations">
+            <td mdTooltip="{{integration.status=='Active'?'In Active':'Active'}}"><button md-mini-fab><i class="material-icons">{{integration.status=='Active'?'arrow_downward':'arrow_upward'}}</i></button></td>
+            <td><a routerLink="/integrationDetail">{{integration.integrationName}}</a></td>
+            <td>{{integration.description}}</td>
+            <td style="min-width:160px"><i class="material-icons" *ngFor="let i of icons" [ngStyle]="{'color': i.color}">fiber_manual_record</i></td>
+            <td><button md-icon-button [mdMenuTriggerFor]="integrationMenu"><i class="material-icons">more_vert</i></button>
+              <md-menu #integrationMenu="mdMenu">
+                <button md-menu-item>
+                <md-icon>date_range</md-icon>
+                <span>Change Run Schedule</span>
+              </button>
+                <button md-menu-item>
+                <md-icon>report_problem</md-icon>
+                <span>Report Error</span>
+              </button>
+                <button md-menu-item disabled>
+                <md-icon>highlight_off</md-icon>
+                <span>Inactivate</span>
+              </button>
+                <button md-menu-item disabled>
+                <md-icon>notifications_off</md-icon>
+                <span>Disable alerts</span>
+              </button>
+              </md-menu>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top" colspan="6"><span>Page:</span> 1 &emsp; Rows per page: 10 &emsp; 1 - 10 of 200 &emsp;
+              <span class="material-icons" style="vertical-align: bottom;">keyboard_arrow_left</span> &emsp;
+              <span class="material-icons" style="vertical-align: bottom;">keyboard_arrow_right</span></td>
+          </tr>
+        </table>
+      </div>-->
+    </md-card-content>
+  </md-card>
+</main>
+<md-menu #integrationMenu="mdMenu">
+  <button md-menu-item><md-icon>date_range</md-icon><span>Change Run Schedule</span></button>
+  <button md-menu-item><md-icon>report_problem</md-icon><span>Report Error</span></button>
+  <button md-menu-item disabled><md-icon>highlight_off</md-icon><span>Inactivate</span></button>
+  <button md-menu-item disabled><md-icon>notifications_off</md-icon><span>Disable alerts</span></button>
+</md-menu>

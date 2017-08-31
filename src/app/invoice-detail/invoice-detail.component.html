@@ -1,0 +1,36 @@
+<main id="invoiceDetail">
+  <md-card>
+     <button md-button (click)="shareDataService.back()" class="backBtn"><i class="material-icons">arrow_back</i> BACK</button>
+    <md-card-content>
+        <form (ngSubmit)="integrationForm.form.valid && integration()" #integrationForm="ngForm">
+            <md-grid-list cols="4" rowHeight="100px">
+              <md-grid-tile cols="1">
+                <md-input-container class="w-100">
+                  <input mdInput placeholder="Name" name="integrationName" disabled [(ngModel)]="integration.integrationName">
+                </md-input-container>
+              </md-grid-tile>
+              <md-grid-tile cols="1">
+                <md-input-container class="w-100">
+                  <input mdInput placeholder="Description" name="integrationDescription" disabled [(ngModel)]="integration.description">
+                </md-input-container>
+              </md-grid-tile>
+              <md-grid-tile cols="1">
+                <md-input-container class="w-100">
+                  <input mdInput placeholder="Last Run Date" name="integrationLastRunDate" disabled [(ngModel)]="integration.lastRunDate">
+                </md-input-container>
+              </md-grid-tile>
+              <md-grid-tile cols="1">
+                <md-input-container class="w-100">
+                  <input mdInput placeholder="Status" name="integrationStatus" disabled [(ngModel)]="integration.status">
+                </md-input-container>
+              </md-grid-tile>
+              <md-grid-tile cols="1">
+                <md-input-container class="w-100">
+                  <input mdInput placeholder="Active Flag" name="integrationActiveFlag" disabled [(ngModel)]="integration.activeFlag">
+                </md-input-container>
+              </md-grid-tile>
+            </md-grid-list>
+          </form>
+    </md-card-content>
+  </md-card>
+</main>

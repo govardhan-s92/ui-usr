@@ -1,0 +1,77 @@
+<main id="customer-details">
+    <md-card>
+        <md-card-content>
+            <section class="example-section">
+                <form (ngSubmit)="customerForm.form.valid && customer()" #customerForm="ngForm">
+                    <md-grid-list cols="4" rowHeight="100px">
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput placeholder="Customer Name" name="customerName" disabled [(ngModel)]="customer.customerName">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput placeholder="Customer Type" name="customerType" disabled [(ngModel)]="customer.customerType">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput type="date" placeholder="Contract Start Date" disabled name="contractStartStr" [(ngModel)]="customer.contractStartStr">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput type="date" placeholder="Contract End Date" disabled name="contractEndStr" [(ngModel)]="customer.contractEndStr">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput placeholder="Primary Name" name="primaryName" disabled [(ngModel)]="customer.primaryName">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input type="email" mdInput placeholder="Primary Email" disabled name="primaryEmail" [(ngModel)]="customer.primaryEmail">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input type="tel" mdInput placeholder="Primary Phone" disabled name="primaryPhone" [(ngModel)]="customer.primaryPhone">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput placeholder="Industry" name="industry" disabled [(ngModel)]="customer.industry">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput placeholder="Secondary Name" disabled name="secondaryName" [(ngModel)]="customer.secondaryName">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input type="email" mdInput placeholder="Secondary Email" disabled name="secondaryEmail" [(ngModel)]="customer.secondaryEmail">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input type="tel" mdInput placeholder="Secondary Phone" disabled name="secondaryPhone" [(ngModel)]="customer.secondaryPhone">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput type="url" placeholder="Logo URL" disabled name="logoUrl" [(ngModel)]="customer.logoUrl">
+                            </md-input-container>
+                        </md-grid-tile>
+                        <md-grid-tile cols="1">
+                            <md-input-container class="example-full-width">
+                                <input mdInput placeholder="Active Flag" disabled name="activeFlag" [(ngModel)]="customer.activeFlag">
+                            </md-input-container>
+                        </md-grid-tile>
+                    </md-grid-list>
+                </form>
+            </section>
+        </md-card-content>
+    </md-card>
+</main>

@@ -1,0 +1,52 @@
+$ihub-primary:#00bcd4;
+main#inbox {
+    .divider-vertical {
+        background: rgba(0, 0, 0, .12);
+        height: 24px;
+        width: 1px;
+        margin: 10px;
+    }
+    .page-setting {
+        color: rgba(0, 0, 0, 0.87);
+        font-size: 13px;
+    }
+    .w-20 {
+        width: 10%!important;
+    }
+    .sidebar-header {
+        // background-color: $ihub-primary;
+        margin-top: 0.3em;
+    }
+    .message_item {
+        border-bottom: 1px solid #eee;
+        .inbox_item_message {
+            color: #bbb;
+            font-size: 13px;
+        }
+        .message_item_props {
+            white-space: nowrap;
+            text-align: right;
+            font-size: 12px;
+        }
+        md-chip {
+            padding: 2px 4px;
+            border-radius: 5px;
+        }
+        &:hover {
+            background-color: #f3f3f3;
+        }
+    }
+    .message_detail_header {
+        md-icon[md-list-icon] {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.colorShow {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 1px;
+}

@@ -1,0 +1,127 @@
+    /* header navigation styles */
+
+    md-sidenav-container {
+        // top: 3px !important;
+        font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+        md-sidenav {
+            max-width: 225px;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            .sidebar-header {
+                background: #00bcd4;
+                color: rgba(255, 255, 255, .87);
+                /* border-bottom: 5px solid #fff; */
+                .top-bar {
+                    height: 25px;
+                    background: rgba(0, 0, 0, 0.1)
+                }
+                .sidebar-image img {
+                    width: 44px;
+                    height: 44px;
+                    margin: 16px;
+                    border-radius: 50%;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                }
+                .sidebar-toggle {
+                    position: relative;
+                    float: right;
+                    margin: 16px 0 16px 16px;
+                    padding: 0;
+                    background-image: none;
+                    border: none;
+                    height: 40px;
+                    width: 40px;
+                    font-size: 20px;
+                    opacity: 0.7;
+                    -webkit-transition: all 0.2s ease-in-out;
+                    -o-transition: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                    color: #f5f5f5;
+                    background-color: transparent;
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.1);
+                    }
+                }
+                .sidebar-brand {
+                    padding: 0 16px;
+                    text-decoration: none;
+                    color: #e0e0e0;
+                    background-color: transparent;
+                    span {
+                        max-width: 165px;
+                        overflow-x: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        display: inline-block;
+                    }
+                }
+            }
+            md-nav-list {
+                a {
+                    color: #6f6f6f;
+                    .md-secondary {
+                        margin-left: 16px;
+                        position: absolute;
+                        right: 16px;
+                        top: 50%;
+                        -webkit-transform: translate3d(0, -50%, 0);
+                        transform: translate3d(0, -50%, 0);
+                    }
+                    &:hover {
+                        transition: all 0.2s ease-in-out;
+                        background-color: rgba(0, 0, 0, 0.1);
+                        text-indent: 2px;
+                    }
+                }
+            }
+            .sidebarToggle {
+                transition: height 1s ease-in-out;
+                opacity: 0;
+                -webkit-transition: height 1s ease-in-out;
+                display: none;
+            }
+        }
+        nav {
+            box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+            md-toolbar {
+                min-height: 44px;
+                height: 44px;
+                button.hamburger {
+                    margin:6px 0 0 -50px;
+                    color: #fff;
+                    padding: 0;
+                }
+                img {
+                    height: 25px;
+                    width: auto;
+                }
+                i {
+                    vertical-align: bottom;
+                }
+                .notification_badge {
+                    background: #f06373;
+                    border-radius: 10px;
+                    padding: 5px;
+                    font-size: 10px;
+                    line-height: 10px;
+                    position: relative;
+                    right: 10px;
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: #00bcd4;
+        padding: 5px 45px;
+        font-size: 10px;
+        color: #e0e0e0;
+        box-shadow: 0 5px 7px 6px rgba(0, 0, 0, 0.5);
+    }
+    .notification{
+        &:hover{
+            background-color:#eee;
+        }
+    }

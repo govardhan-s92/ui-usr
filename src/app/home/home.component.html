@@ -1,0 +1,74 @@
+<!--<md-progress-bar  color="warn" mode="indeterminate"></md-progress-bar>-->
+<md-sidenav-container fullscreen>
+    <md-sidenav #sidenav>
+        <div class="sidebar-header">
+            <div class="top-bar">&nbsp;</div>
+            <button type="button" class="sidebar-toggle" (click)="sidenav.close()">
+                <i class="material-icons">close</i>
+            </button>
+            <div class="sidebar-image">
+                <img src="https://www.wertisan.com/skin/frontend/wertisan/default/images/custom/dummy_user.png" />
+            </div>
+            <button md-button class="sidebar-brand" (click)="showProfile = !showProfile"><span>john@invalidmail.com</span>&nbsp;<md-icon>keyboard_arrow_down</md-icon></button>
+        </div>
+        <md-nav-list *ngIf="showProfile" [@enterAnimation]="showProfile">
+            <a md-list-item routerLink="/profile" (click)="sidenav.close()"><i class="material-icons">supervisor_account</i>&nbsp;My Profile </a>
+            <a md-list-item (click)="sidenav.close()"><i class="material-icons">settings</i>&nbsp;My Preferences </a>
+            <a md-list-item routerLink="/login" (click)="sidenav.close()"><i class="material-icons" color="warn">power_settings_new</i>&nbsp;Logout </a>
+            <md-divider></md-divider>
+        </md-nav-list>
+        <md-nav-list>
+            <!--<h6 md-subheader>Pages</h6>-->
+            <a md-list-item routerLink="/dashboard" (click)="sidenav.close()"><i class="material-icons">dashboard</i>&nbsp;My Dashboard</a>
+            <a md-list-item routerLink="/integration" (click)="sidenav.close()"><i class="material-icons">cloud_queue</i>&nbsp;My Integration</a>
+            <a md-list-item routerLink="/run" (click)="sidenav.close()"><i class="material-icons">directions_run</i>&nbsp;My Run</a>
+            <a md-list-item routerLink="/invoice" (click)="sidenav.close()"><i class="material-icons">monetization_on</i>&nbsp;My Invoice</a>
+            <a md-list-item routerLink="/account" (click)="sidenav.close()"><i class="material-icons">account_box</i>&nbsp;Company Profile</a>
+            <md-divider></md-divider>
+            <!--<h6 md-subheader>Favorites</h6>-->
+            <a md-list-item routerLink="/inbox" (click)="sidenav.close()">
+                <i class="material-icons">mail_outline</i>&nbsp;Inbox
+                <div class="md-secondary">20+</div>
+            </a>
+            <a md-list-item (click)="sidenav.close()">
+                <md-icon>&#xE878;</md-icon>&nbsp;Events</a>
+            <!--<a md-list-item (click)="sidenav.close()"><i class="material-icons">&#xE251;</i>&nbsp;Photos</a>-->
+        </md-nav-list>
+    </md-sidenav>
+    <nav>
+        <md-toolbar color="primary">
+            <div class="col">
+                <button md-button (click)="sidenav.open()" color="primary" class="hamburger"><md-icon>menu</md-icon></button>
+                <img src="./assets/images/iHub-logo.png" alt="iHub Logo">&nbsp;
+                <img src="https://pbs.twimg.com/profile_images/555397797873057792/j74-0ehy.png" />
+            </div>
+            <div class="col text-center">
+                {{pageHeader|async}}
+            </div>
+            <div class="col text-right">
+                <div>
+                    <button md-icon-button  [mdMenuTriggerFor]="notification_menu"><i class="material-icons">message</i><sup class="notification_badge">2</sup></button>
+                </div>
+            </div>
+        </md-toolbar>
+    </nav>
+    <div class="main-container">
+        <router-outlet></router-outlet>
+    </div>
+    <footer>
+        <div>&copy; 1998 - {{getCurrentYear|date:'yyyy'}} All rights reserved. &nbsp; | &nbsp; <a href="http://kbace.com/privacy"
+                target="_blank">Privacy Policy</a> &nbsp; | &nbsp; <a href="http://kbace.com/contact" target="_blank">Contact</a></div>
+    </footer>
+</md-sidenav-container>
+<md-menu #notification_menu="mdMenu" [overlapTrigger]="false">
+ <md-list>
+  <h3 md-subheader>Notifications</h3>
+    <a routerLink="/inbox"><md-list-item *ngFor="let notification of notifications" class="notification">
+        <md-icon md-list-icon>mail</md-icon>
+        <h4 md-line>{{notification.name}}</h4>
+        <p md-line> {{notification.content}} </p>
+    </md-list-item></a>
+    <md-divider></md-divider>
+  <h3 md-subheader class="text-center">View All</h3>
+</md-list>
+</md-menu>
